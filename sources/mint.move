@@ -2,9 +2,12 @@ module mint_addr::mint{
   use std::signer;
   use std::string;
   use std::error;
+  use std::vector;
   use  aptos_token::token;
+  use aptos_framework::account;
 
-  const BASE_URI:vector<u8>= b"";
+
+  const BASE_URI:vector<u8> = b"";
 
 
   struct TokenMintingEvent has drop,store{
@@ -13,7 +16,7 @@ module mint_addr::mint{
 
   }
   struct Nft{
-    
+   signer_cap:account::SignerCapability,
   }
 
   fun init_module(){}
